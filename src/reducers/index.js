@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
-import test from './test';
+import contacts from './contacts';
 
 const rootReducer = combineReducers({
-  test
+  contacts
 });
 
 export default rootReducer;
