@@ -17,7 +17,6 @@ class Contacts extends Component {
   }
   add(e){
     e.preventDefault()
-    debugger;
     const contact = {
       name: e.target.name.value,
       context: e.target.context.value,
@@ -39,12 +38,12 @@ class Contacts extends Component {
     const contactList = contacts.length > 0 ? contacts.map((item,i)=>{
       return (
         <div className='contact' key={i}>
-          <li>{item.name}</li>
-          <li>{item.number}</li>
-          <li>{item.context}</li>
+          <li><div className='label'>Name:</div> {item.name}</li>
+          <li><div className='label'>Number:</div>{item.number}</li>
+          <li><div className='label'>Context:</div>{item.context}</li>
         </div>
       )
-    }).reverse() : "no records found"
+    }).reverse() : <h1>No Records Found</h1>
     return (
       <span>
         <AddContact add={this.add.bind(this)} />

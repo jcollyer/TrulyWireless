@@ -1,6 +1,76 @@
-*{box-sizing: border-box;}
-.contact {
-  float: left;
+*{
+  box-sizing: border-box;
+}
+
+body {
+  font-family: monospace;
+  margin: 0;
+}
+
+input[type='text'], input[type='tel']{
+  .inputStyle;
+}
+
+button{
+  .inputStyle;
+  color: white;
+  background: #999;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 60px;
+}
+
+.inputStyle{
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 10px;
   padding: 10px;
-  width: 33%;
+}
+
+#add{
+  background: #eee;
+  padding: 20px;
+}
+#search {
+  background: #e5e5ee;
+  color: #555;
+  padding: 0px 20px;
+}
+.contact {
+  border: 1px solid #eee;
+  float: left;
+  margin: 20px 1% 0px;
+  padding: 0px 10px;
+  width: 31%;
+  li {
+    list-style-type: none;
+    font-size: 16px;
+    background: #f5f5f5;
+    margin: 10px 0px;
+    padding: 7px;
+    color: #666;
+    .label {
+      font-size: 10px;
+      font-weight: bold;
+      float: left;
+      margin: 3px 10px;
+    }
+  }
+}
+
+@media (max-width: 768px){
+  .contact {
+    width: 48%;
+  }
+}
+
+@media (max-width: 545px){
+  .contact {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    margin: 20px 0% 0px;
+  }
 }
