@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import faker from 'faker'
+import AddContact from './add-contact'
+import SearchContact from './search-contacts'
 import { loadContacts, addContact, searchContacts } from '../actions/contacts'
 
 class Contacts extends Component {
@@ -10,7 +12,7 @@ class Contacts extends Component {
   loadContacts(){
     this.props.dispatch(loadContacts())
   }
-  searchContacts(q){
+  search(q){
     this.props.dispatch(searchContacts(q))
   }
   add(e){
@@ -29,7 +31,7 @@ class Contacts extends Component {
     if( e.target.value.length == 0){
       this.loadContacts()
     } else {
-      this.searchContacts(e.target.value)
+      this.search(e.target.value)
     }
   }
   render() {
@@ -45,19 +47,9 @@ class Contacts extends Component {
     }).reverse() : "no records found"
     return (
       <span>
-        <form onSubmit={this.add.bind(this)}>
-          <input type='text' name='name' placeholder='name' />
-          <input type='tel' name='number' pattern='^\+?\d{10,14}$' placeholder='+13615673324' />
-          <input type='text' name='context' placeholder='context' />
-          <button>Add Contact</button>
-        </form>
-        <br />
-        <br />
-        ---------
-        <input type='text' name='search' placeholder='search by name' onChange={this.shouldLoad.bind(this)} />
-        <br />
-        <br />
-        {contactList}
+        <AddContact add={this.add.bind(this)} />
+        <SearchContact search={this.shouldLoad.bind(this)} />
+        <div id='contacts'>{contactList}</div>
       </span>
     )
   }
