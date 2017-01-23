@@ -7,7 +7,6 @@ export default function accounts(state = initialState, action) {
         })
       case 'ADD_CONTACT':
         const allContacts = state.contacts.concat(action.contact)
-        // debugger;
         return Object.assign({}, state, {
           contacts: allContacts
         })
