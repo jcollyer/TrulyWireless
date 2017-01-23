@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import faker from 'faker'
 import AddContact from './add-contact'
 import SearchContact from './search-contacts'
 import { loadContacts, addContact, searchContacts } from '../actions/contacts'

@@ -1,5 +1,4 @@
 import $ from 'jquery'
-import request from 'superagent'
 
 export function loadContacts(){
   return function(dispatch){
